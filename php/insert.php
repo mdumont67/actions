@@ -21,7 +21,7 @@ if ($result) {
 	}
 }
 
-echo "yooo";
+echo "yoo";
 $sql = "INSERT INTO emails (name, message, email,gender)
 VALUES ('$name', '$body', '$to', '$gender')";
 
