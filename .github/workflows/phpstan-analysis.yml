@@ -14,8 +14,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: OSKAR-phpstan
+      - name: phpStan
         # You may pin to the exact commit or the version.
-        # uses: OskarStark/phpstan-ga@4e8297e199fd1049130a1fdcf1c12382a5a1b845
-        uses: OskarStark/phpstan-ga@1.9.0
-      
+        # uses: NxtLvLSoftware/setup-phpstan-action@aa44652e7e9237f8f16f7a188a1c65cedb4d63b2
+        uses: docker://oskarstark/phpstan-ga
+        with:
+          args: analyse .
