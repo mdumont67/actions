@@ -5,21 +5,29 @@ jobs:
   tests:
     runs-on: ubuntu-latest      
     steps:
-        - uses: actions/checkout@v3
-        - name: Setup PHP
+        - 
+          uses: actions/checkout@v3
+        - 
+          name: Setup PHP
           uses: shivammathur/setup-php@v2
           with:
             php-version: 8.1
-        - uses: php-actions/composer@v6
-        - name: test  phpstan
+        - 
+          uses: php-actions/composer@v6
+        - 
+          name: test  phpstan
           run:  php ./vendor/bin/phpstan analyse php
   build:
     needs: tests
     runs-on: ubuntu-latest      
     steps:
-      - run: echo "Build app image"
+      - name: GHCR-Action
+        uses: KuhlTime/ghcr-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
   deploy:
     needs: build
     runs-on: ubuntu-latest      
     steps:
-      - run: echo "Deploy project" 
+      - 
+        run: echo "Deploy project" 
