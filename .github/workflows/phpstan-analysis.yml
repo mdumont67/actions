@@ -16,7 +16,7 @@ jobs:
           uses: php-actions/composer@v6
         - 
           name: test  phpstan
-          run:  php ./vendor/bin/phpstan analyse php
+          run:  php ./app/vendor/bin/phpstan analyse php
   build:
     needs: tests
     runs-on: ubuntu-latest      
