@@ -7,4 +7,4 @@ RUN apt-get update && apt-get install -y \
 	&& docker-php-ext-enable mysqli
     
     
-COPY . /var/www/html/
+COPY ./ /var/www/html/
