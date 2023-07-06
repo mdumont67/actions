@@ -117,13 +117,13 @@ class InstalledVersions
      * @param  string|null   $constraint  A version constraint to check for, if you pass one you have to make sure composer/semver is required by your package
      * @return bool
      */
-    public static function satisfies(VersionParser $parser, $packageName, $constraint)
-    {
-        $constraint = $parser->parseConstraints($constraint);
-        $provided = $parser->parseConstraints(self::getVersionRanges($packageName));
+    // public static function satisfies(VersionParser $parser, $packageName, $constraint)
+    // {
+    //     $constraint = $parser->parseConstraints($constraint);
+    //     $provided = $parser->parseConstraints(self::getVersionRanges($packageName));
 
-        return $provided->matches($constraint);
-    }
+    //     return $provided->matches($constraint);
+    // }
 
     /**
      * Returns a version constraint representing all the range(s) which are installed for a given package
